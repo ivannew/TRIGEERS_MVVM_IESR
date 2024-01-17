@@ -36,8 +36,10 @@ namespace TRIGEERS_MVVM_IESR.VistaModelo
 
         public void MostrarCategoria()
         {
-            ListaCategorias=new ObservableCollection<Mcategorias>(Datos.Dcategorias.MostrarCategorias());
+            _listaCategorias = new ObservableCollection<Mcategorias>(Datos.Dcategorias.MostrarCategorias());
+          
         }
+
 
         public ICommand ProcesoAsyncomand => new Command(async () => await ProcesoAsyncrono());
         public ICommand ProcesoSimpcomand => new Command(MostrarCategoria);

@@ -15,6 +15,8 @@ namespace TRIGEERS_MVVM_IESR.Vistas
         public Categoria()
         {
             InitializeComponent();
+          
+
         }
     }
 }

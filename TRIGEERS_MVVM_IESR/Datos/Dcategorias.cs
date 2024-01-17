@@ -14,33 +14,37 @@ namespace TRIGEERS_MVVM_IESR.Datos
             {
                 new Mcategorias()
                 {
-                    descripcion="cena",
+                    /*<a href="https://imgbb.com/"><img src="https://i.ibb.co/nR3x3VR/superheroe.png" alt="superheroe" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/DkGnbpq/leon.png" alt="leon" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/rxtcLSL/gato.png" alt="gato" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/mThzYYy/perro.png" alt="perro" border="0"></a>*/
+                    descripcion="pantera",
                     numeroItem=4512,
-                    imagen="",
+                    imagen="https://i.ibb.co/nR3x3VR/superheroe.png",
                     backgroundColor="#EAEDF6",
                     textColor="#00000"
                 },
                 new Mcategorias()
                 {
-                    descripcion="fiesta",
+                    descripcion="leon",
                     numeroItem=4512,
-                    imagen="",
+                    imagen="https://i.ibb.co/DkGnbpq/leon.png",
                     backgroundColor="#EAEDF6",
                     textColor="#00000"
                 },
                 new Mcategorias()
                 {
-                    descripcion="cena",
+                    descripcion="perro",
                     numeroItem=4512,
-                    imagen="",
+                    imagen="https://i.ibb.co/mThzYYy/perro.png",
                     backgroundColor="#EAEDF6",
                     textColor="#00000"
                 },
                 new Mcategorias()
                 {
-                    descripcion="cena",
+                    descripcion="gato",
                     numeroItem=4512,
-                    imagen="",
+                    imagen="https://i.ibb.co/rxtcLSL/gato.png",
                     backgroundColor="#EAEDF6",
                     textColor="#00000"
                 }

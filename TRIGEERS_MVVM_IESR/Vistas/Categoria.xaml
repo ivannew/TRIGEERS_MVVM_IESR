@@ -3,10 +3,49 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TRIGEERS_MVVM_IESR.Vistas.Categoria">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowDefinitions="Auto,*" BackgroundColor="White">
+            <StackLayout HeightRequest="180" Margin="10">
+                <Label Text="Posibles regalos"
+                       FontSize="25"
+                       FontAttributes="Bold"
+                       TextColor="#ff506b">
+                </Label>
+                <Label Text="Data trigger"
+                       FontSize="15"
+                       FontAttributes="Bold"
+                       TextColor="#bd8d8d">
+                </Label>
+                <CollectionView ItemsSource="{Binding ListaCategorias}">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout ItemSpacing="5"
+                                           Orientation="Horizontal"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Frame Margin="0,5,5,5"
+                                   Padding="8"
+                                   BackgroundColor="{Binding backgroundColor}"
+                                   CornerRadius="35"
+                                   HeightRequest="50"
+                                   WidthRequest="135"
+                                   HasShadow="False"
+                                   VerticalOptions="Center">
+                                    <Grid ColumnDefinitions="Auto,*" RowSpacing="0" VerticalOptions="Center">
+                                        <Image Source="{Binding imagen}" HeightRequest="35" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" WidthRequest="35"/>
+                                        <StackLayout Grid.Column="1">
+                                            <Label Text="{Binding descripcion}" FontSize="16"
+                                               VerticalOptions="Start" TextColor="{Binding textColor}"/>
+                                            <Label Text="{Binding numeroItem}" FontSize="9"
+                                               VerticalOptions="Start" TextColor="{Binding textColor}"/>
+                                        </StackLayout>
+                                    </Grid>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
