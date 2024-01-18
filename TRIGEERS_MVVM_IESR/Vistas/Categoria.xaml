@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TRIGEERS_MVVM_IESR.Vistas.Categoria">
+             x:Class="TRIGEERS_MVVM_IESR.Vistas.Categoria"
+             xmlns:disparador="clr-namespace:TRIGEERS_MVVM_IESR.Triggers.Tcategoria">
     <ContentPage.Content>
         <Grid RowDefinitions="Auto,*" BackgroundColor="White">
             <StackLayout HeightRequest="180" Margin="10">
@@ -46,6 +47,24 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
             </StackLayout>
+            <Image Grid.Row="1" VerticalOptions="CenterAndExpand" HeightRequest="250"
+                   Source="{Binding Imagen}">
+                <Image.Triggers>
+                    <MultiTrigger TargetType="Image">
+                        <MultiTrigger.Conditions>
+                            <BindingCondition Binding="{Binding ActivadorAnimacionImg}" Value="True"/>
+                            
+                        </MultiTrigger.Conditions>
+                        <MultiTrigger.EnterActions>
+                         <disparador:Timagen activacion="True"/>
+                        </MultiTrigger.EnterActions>
+                        <MultiTrigger.ExitActions>
+                            <disparador:Timagen activacion="False"/>
+                        </MultiTrigger.ExitActions>
+                    </MultiTrigger>
+                </Image.Triggers>
+                
+            </Image>
         </Grid>
     </ContentPage.Content>
 </ContentPage>
