@@ -11,7 +11,7 @@ namespace TRIGEERS_MVVM_IESR
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Vistas.Categoria());
+            MainPage = new Categoria();
 
         }
 

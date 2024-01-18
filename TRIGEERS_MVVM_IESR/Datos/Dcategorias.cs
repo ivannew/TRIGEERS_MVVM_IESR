@@ -21,32 +21,33 @@ namespace TRIGEERS_MVVM_IESR.Datos
                     descripcion="pantera",
                     numeroItem=4512,
                     imagen="https://i.ibb.co/nR3x3VR/superheroe.png",
-                    backgroundColor="#EAEDF6",
-                    textColor="#00000"
+                    backgroundColor="#000000",
+                    textColor="#ffffff"
                 },
                 new Mcategorias()
                 {
                     descripcion="leon",
                     numeroItem=4512,
                     imagen="https://i.ibb.co/DkGnbpq/leon.png",
-                    backgroundColor="#EAEDF6",
-                    textColor="#00000"
+                    backgroundColor="#000000",
+                    textColor="#ffffff"
+
                 },
                 new Mcategorias()
                 {
                     descripcion="perro",
                     numeroItem=4512,
                     imagen="https://i.ibb.co/mThzYYy/perro.png",
-                    backgroundColor="#EAEDF6",
-                    textColor="#00000"
+                    backgroundColor="#000000",
+                    textColor="#ffffff"
                 },
                 new Mcategorias()
                 {
                     descripcion="gato",
                     numeroItem=4512,
                     imagen="https://i.ibb.co/rxtcLSL/gato.png",
-                    backgroundColor="#EAEDF6",
-                    textColor="#00000"
+                    backgroundColor="#000000",
+                    textColor="#ffffff"
                 }
             };
         }
