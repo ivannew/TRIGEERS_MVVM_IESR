@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Vistas\Categoria.xaml">
+    <EmbeddedResource Update="Vistas\Vcategoria.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

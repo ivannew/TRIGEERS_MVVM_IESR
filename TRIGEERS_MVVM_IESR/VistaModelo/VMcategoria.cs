@@ -13,62 +13,59 @@ namespace TRIGEERS_MVVM_IESR.VistaModelo
 {
     public class VMcategoria : BaseViewModel
     {
-        string _Texto;
+        #region VARIABLES
         bool _activadorAnimacionImg;
         string _imagen;
         ObservableCollection<Mcategorias> _listaCategorias;
-
+        #endregion
+        #region CONSTRUCTOR
         public VMcategoria(INavigation navigation)
         {
             Navigation = navigation;
-            MostrarCategoria();
+            MostrarCategorias();
         }
-
-
+        #endregion
+        #region OBJETOS
+        public string Imagen
+        {
+            get { return _imagen; }
+            set { SetValue(ref _imagen, value); }
+        }
+        public bool ActivadorAnimacionImg
+        {
+            get { return _activadorAnimacionImg; }
+            set { SetValue(ref _activadorAnimacionImg, value); }
+        }
         public ObservableCollection<Mcategorias> ListaCategorias
         {
             get { return _listaCategorias; }
-            set { SetProperty(ref _listaCategorias, value); }
+            set { SetValue(ref _listaCategorias, value); }
         }
-     
-         public bool ActivardorAnimacionImg
-        {
-            get { return _activadorAnimacionImg; }
-            set { SetProperty(ref _activadorAnimacionImg, value); }
-        }
-        public string imagen
-        {
-            get { return _imagen; }
-            set { SetProperty(ref _imagen, value); }
-        }
-
-        public void seleccionar(Mcategorias modelo)
+        #endregion
+        #region PROCESOS
+        public void Seleccionar(Mcategorias modelo)
         {
             var index = ListaCategorias
                 .ToList()
                 .FindIndex(p => p.descripcion == modelo.descripcion);
-
-            imagen = modelo.imagen;
-            if(index>-1)
+            Imagen = modelo.imagen;
+            if (index > -1)
             {
                 Deseleccionar();
-                _activadorAnimacionImg = true;
+                ActivadorAnimacionImg = true;
                 ListaCategorias[index].selected = true;
-                ListaCategorias[index].textColor = "#ffffff";
-                ListaCategorias[index].backgroundColor = "#FF506b";
+                ListaCategorias[index].textColor = "FFFFFF";
+                ListaCategorias[index].backgroundColor = "FF506B";
             }
-            
-
         }
         public void Deseleccionar()
         {
             ListaCategorias.ForEach((item) =>
             {
-                ActivardorAnimacionImg = false;
+                ActivadorAnimacionImg = false;
                 item.selected = false;
                 item.textColor = "#000000";
                 item.backgroundColor = "#EAEDF6";
-
             });
         }
 
@@ -76,16 +73,17 @@ namespace TRIGEERS_MVVM_IESR.VistaModelo
         {
 
         }
-
-        public void MostrarCategoria()
+        public void MostrarCategorias()
         {
-            _listaCategorias = new ObservableCollection<Mcategorias>(Datos.Dcategorias.MostrarCategorias());
-          
+            //Para agarrar todos los datos
+            ListaCategorias = new ObservableCollection<Mcategorias>(Datos.Dcategorias.MostrarCategorias());
         }
-
-
+        #endregion
+        #region COMANDOS
         public ICommand ProcesoAsyncomand => new Command(async () => await ProcesoAsyncrono());
-        public ICommand ProcesoSimpcomand => new Command(MostrarCategoria);
+        public ICommand ProcesoSimpcomand => new Command(MostrarCategorias);
+        public ICommand Seleccionarcomand => new Command<Mcategorias>((p) => Seleccionar(p));
+        #endregion
 
     }
 }

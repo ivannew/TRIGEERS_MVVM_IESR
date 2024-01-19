@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace TRIGEERS_MVVM_IESR.Vistas
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Categoria : ContentPage
+    public partial class Vcategoria : ContentPage
     {
-        public Categoria()
+        public Vcategoria()
         {
             InitializeComponent();
             BindingContext = new VMcategoria(Navigation);
